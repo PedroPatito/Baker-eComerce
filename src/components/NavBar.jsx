@@ -5,6 +5,8 @@ import CartWidget from "./CartWidget"
 import React from 'react'
 import brand from "../img/brand.png"
 import "../NavBarStyle.css"
+import { Link } from 'react-router-dom';
+import { BrowserRouter} from "react-router-dom";
 
 export default function navBar() {
   return (
@@ -12,18 +14,28 @@ export default function navBar() {
       
       <Navbar bg="light" variant="light">
         <Container>
-          <Navbar.Brand href="#home"></Navbar.Brand>
-         <img src={brand} alt="" />
+          <Link to="/"><img src={brand} alt="" /></Link>
           <Nav className="me-auto">
-            <Nav.Link href="#home">herramientas</Nav.Link>
-            <Nav.Link href="#features">moldes</Nav.Link>
-            <Nav.Link href="#features">maquinaria</Nav.Link>
-            <Nav.Link href="#pricing">insumos</Nav.Link>
+          <ul>
+            <li>
+            <Link  to={"/herramientas"}>herramientas</Link>
+          </li>
+          <li>
+            <Link to={"/moldes"}>moldes</Link>
+          </li>
+          <li>
+            <Link to={"/maquinaria"}>maquinaria</Link>
+          </li>
+          <li>
+            <Link to={"/insumos"}>insumos</Link>
+          </li>
+          </ul>
+
           </Nav>
           <CartWidget />
-        </Container>
+         </Container>
         
-      </Navbar>
+       </Navbar>
     
     </div>
   )
