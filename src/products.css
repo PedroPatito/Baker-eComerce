@@ -1,0 +1,101 @@
+.product{
+    display: inline-flex;
+    justify-content: center;
+    text-align: center;
+    height: 25rem;
+    margin: 2rem;
+    box-shadow: 0 0 5px rgb(150, 149, 149);
+    border-radius: 1rem;
+    align-self: center;
+    justify-self: center;
+    
+}
+
+
+.img_card{
+    height: 14rem;
+    box-shadow: 0 1px 5px rgb(150, 149, 149);
+
+}
+
+.App{
+    background-color: rgb(255, 245, 229);
+    /* align-items: center; */
+    /* align-content: center; */
+    /* justify-content: center; */
+
+    /* height: 110vh; */
+    
+    
+}
+
+
+
+
+.itemListContainer{
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    align-self: center;
+    justify-self: center;
+}
+
+
+.button{
+    background-color: aliceblue;
+    border: 0;
+    color: black;
+}
+
+
+.itemDetail{
+    display: flex;
+    align-items: center;
+    align-self: left;
+    justify-content: left ;
+    justify-self: left;
+    flex-direction: column;
+    margin: 2rem;
+    background-color: antiquewhite;
+    padding-bottom: 40vh;
+    border-radius: 2rem;
+}
+
+.productosCheckOut{
+    margin: 2rem;
+    display: inline-block;
+    flex-direction: row;
+    
+    
+}
+
+.productosCheckOut p {
+    font-size: 1.2rem;
+}
+
+.imgCheckOut{
+    height: 10rem;
+}
+
+.formCheckOut{
+    display:flex;
+    flex-direction: column;
+    /* width: 40%; */
+    align-items: center;
+    justify-content: center;
+}
+
+.inputForm{
+    width: 200%;
+}
+
+.buttonCheckOut{
+margin: 1rem;
+}
+
+.categories{
+    display: inline-flex;
+
+    height:100vh;
+
+}

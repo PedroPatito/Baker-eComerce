@@ -1,4 +1,51 @@
 
 img{
     height: 80px;
+
+}
+.navBar{
+    background-color: rgb(255, 238, 211);
+    box-shadow: 0 1px 5px rgb(150, 149, 149);
+
+    
+}
+
+.navBarLinks{
+    display: inline-flex;
+    text-decoration:none;
+    color: black;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-size: 1.5rem;
+    
+
+}
+
+.linkNavBar{
+    text-decoration: none;
+
+}
+
+.cartWidget{
+    text-decoration: none;
+    color: black;
+}
+.svgCart{
+color: black;
+text-decoration: none;
+font-size: 2rem;
+}
+.numeroCartWidget{
+    text-decoration: none;
+    color: black;
+    
+
+}
+.linkCart{
+    text-decoration: none;
+}
+.divCartWidget{
+    border-radius: 50%;
+    background-color: antiquewhite;
+    padding: 1rem;
 }

@@ -1,9 +1,11 @@
-import React from 'react'
+import ItemDetail from "./ItemDetail";
 
-export default function ItemDetailContainer() {
+const ItemDetailContainer = () => {
   return (
-    <div>
-      <h1>Detalle del producto</h1>
-    </div>
-  )
-}
+    <>
+      <ItemDetail />
+    </>
+  );
+};
+
+export default ItemDetailContainer;

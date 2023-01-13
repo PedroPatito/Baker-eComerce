@@ -1,11 +1,11 @@
-import React from 'react'
-import Harina from './item'
-import { Link } from 'react-router-dom'
+import React from "react";
+
+import Productos from "./item";
+import "../products.css";
 export default function ItemListContainer() {
   return (
-    <div>
-      <h1>Bienvenido, próximamente todo lo que necesita para hacer crecer sus panes, aquí</h1>
-      <Link to={"ItemDetailContainer"}><Harina/></Link>
+    <div className="itemListContainer">
+      <Productos />
     </div>
-  )
+  );
 }
