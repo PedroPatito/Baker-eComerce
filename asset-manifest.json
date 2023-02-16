@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Baker-eComerce/static/css/main.75fddcbe.css",
+    "main.js": "/Baker-eComerce/static/js/main.cbc850aa.js",
+    "static/media/brand.png": "/Baker-eComerce/static/media/brand.d79e31848a8e7069faf9.png",
+    "index.html": "/Baker-eComerce/index.html",
+    "main.75fddcbe.css.map": "/Baker-eComerce/static/css/main.75fddcbe.css.map",
+    "main.cbc850aa.js.map": "/Baker-eComerce/static/js/main.cbc850aa.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.75fddcbe.css",
+    "static/js/main.cbc850aa.js"
+  ]
+}
