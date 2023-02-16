@@ -4,15 +4,22 @@ import { useEffect } from "react";
 import { Button, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { CrearOrden } from "../queries/products";
+import Brief from "./brief";
 import "../products.css";
+import { useLocalStorage } from "./LocalStorage";
+
 const CheckOut = () => {
   let productos = [];
   let productoParseado;
   let total = [];
   let totalCompra;
-  // const [nombre,setNombre] = useState(" ")
-  // const [mail,setMail] = useState(" ")
-  // const [telefono,setTelefono] = useState(" ")
+  const [nombre,setNombre] = useState(" ")
+  const [mail,setMail] = useState(" ")
+  const [telefono,setTelefono] = useState(" ")
+
+
+
+
 
   for (let i = 0, len = localStorage.length; i < len; ++i) {
     productos[i] = JSON.parse(localStorage.getItem(localStorage.key(i)));
@@ -26,17 +33,16 @@ const CheckOut = () => {
 
 
 
-  useEffect(() => {
+  const datosComprador = () => {
     const db = getFirestore();
 
     const order = {
-      cliente: { nombre: "register", email: "mail", telefono: "telefono" },
+      cliente: { nombre: nombre, email: mail, telefono: telefono },
       total: totalCompra,
     };
 
-    CrearOrden(db, order).then((order) => {
-    });
-  }, []);
+     CrearOrden(db, order)
+  };
 
   const renderProductos = () => {
     return productoParseado?.map((item) => (
@@ -63,37 +69,36 @@ const CheckOut = () => {
       {renderProductos()}
       <p>total ${totalCompra}</p>
 
-      <Form className="formCheckOut">
-        <Form.Group className="mb-3" controlId="nombre">
+      <Form className="formCheckOut"  >
+        <Form.Group className="mb-3" controlId="nombre" onChange={event => setNombre(event.target.value)}>
           <Form.Label>Nombre</Form.Label>
-          <Form.Control
+          <Form.Control 
             className="inputForm"
-            type="email"
+            type="text"
             placeholder="Juan Carlos Perez"
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="Email">
+        <Form.Group className="mb-3" controlId="Email" onChange={event => setMail(event.target.value)}>
           <Form.Label>Email </Form.Label>
-          <Form.Control
+          <Form.Control 
             className="inputForm"
             type="email"
             placeholder="pepe123@gmail.com"
           />
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="telefono">
+        <Form.Group className="mb-3" controlId="telefono" onChange={event => setTelefono(event.target.value)}>
           <Form.Label>Telefono</Form.Label>
-          <Form.Control
+          <Form.Control 
             className="inputForm"
-            type="password"
+            type="telephone"
             placeholder="+54 9 294-4857234"
           />
         </Form.Group>
         <Button
-          type="submit"
           className="buttonCheckOut"
           onClick={() => {
-            CrearOrden();
+            datosComprador()
           }}
         >
           Finalizar compra

@@ -1,4 +1,3 @@
-import React, { useState }  from "react";
 import { BrowserRouter,Routes,Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -23,11 +22,9 @@ function App() {
         <Routes> 
           <Route exact path="/" element={<ItemListContainer/>}/>
           <Route path="categoria/ItemDetailContainer" element={<Product/>}/>
-
           <Route path="/product/:id" element={<ItemDetailContainer/>}/>
           <Route path="/category/:name" element={<RenderCategorias/>}/>
           <Route path="/checkOut" element={<CheckOut/>}/>
-
         </Routes>
       </BrowserRouter>  
     </div>

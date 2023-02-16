@@ -24,7 +24,6 @@
     /* align-content: center; */
     /* justify-content: center; */
 
-    /* height: 110vh; */
     
     
 }
@@ -94,8 +93,10 @@ margin: 1rem;
 }
 
 .categories{
-    display: inline-flex;
-
+    display: inline;
+    align-items: center;
+    justify-content: center;
     height:100vh;
+
 
 }

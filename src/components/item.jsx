@@ -1,6 +1,5 @@
 import React from "react";
 import { useEffect, useState } from "react";
-// import { getFirestore } from 'firebase/firestore';
 import { getAllProducts } from "../queries/products";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";

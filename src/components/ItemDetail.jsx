@@ -11,7 +11,7 @@ import "../products.css"
 
   const { id } = useParams();
   const [enCarrito, agregarCarrito] = useLocalStorage(id, " ")
-  var [product, setProduct] = useState(null);
+  let [product, setProduct] = useState(null);
   useEffect(() => {
     const db = getFirestore();
     GetProductById(db, id)
@@ -22,8 +22,8 @@ import "../products.css"
   }, [id]);
 
   
-  var e = 1
-  var precioInicial = product?.precio
+  let e = 1
+  let precioInicial = product?.precio
   return (
     <div className='itemDetail'>
       <h1>{product?.producto}</h1>
@@ -36,7 +36,7 @@ import "../products.css"
        product.precio = product.precio + precioInicial
         product.cantidad++
         e++
-
+        console.log(e);
         
 
              }}>+</Button>
