@@ -1,6 +1,5 @@
 import { getFirestore } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react'
-import { Button } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import { GetProductById } from '../queries/products';
 import { useLocalStorage } from './LocalStorage';
@@ -22,7 +21,11 @@ import "../products.css"
   }, [id]);
 
   
+  // let e = 1
+
+
   let e = 1
+
   let precioInicial = product?.precio
   return (
     <div className='itemDetail'>
@@ -30,7 +33,7 @@ import "../products.css"
       <img alt='foto' src={product?.foto}/>
       <p>{product?.descripcion}</p>
       <p>${product?.precio}</p>
-      <Button className='button' onClick={ () =>{
+      <button className='button' onClick={ () =>{
         
        
        product.precio = product.precio + precioInicial
@@ -39,11 +42,11 @@ import "../products.css"
         console.log(e);
         
 
-             }}>+</Button>
+             }}>+</button>
   
              <span>{e}</span>
 
-      <Button className='button'  onClick={ () =>{
+      <button className='button'  onClick={ () =>{
 
 
   product.precio = product.precio - precioInicial
@@ -53,14 +56,14 @@ e--
 
   }
      }
-      >-</Button>
+      >-</button>
 
-      <Button variant="primary" className='button' onClick={ () =>{
+      <button className='button button-detail' onClick={ () =>{
         agregarCarrito(product)
         window.location.reload(true);
 }
 
-}>agregar al carrito</Button>
+}>agregar al carrito</button>
     </div>
   )
 }

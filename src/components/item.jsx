@@ -19,12 +19,12 @@ export default function Productos(db) {
         <Card.Img className="img_card" variant="top" src={item.foto} />
         <Card.Body>
           <Card.Title>{item.producto}</Card.Title>
-          <Card.Text>{item.precio}</Card.Text>
+          <Card.Text>$ {item.precio}</Card.Text>
           <Link to={`/product/${item.id}`}>
             {" "}
-            <Button variant="primary" className="button">
+            <button className="button">
               ver detalle
-            </Button>{" "}
+            </button>{" "}
           </Link>
         </Card.Body>
       </Card>

@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+
+body{
+    font-family: 'Ubuntu', sans-serif;
+}
+
+
 .product{
     display: inline-flex;
     justify-content: center;
@@ -19,6 +27,7 @@
 }
 
 .App{
+    z-index: -1;
     background-color: rgb(255, 245, 229);
     /* align-items: center; */
     /* align-content: center; */
@@ -32,18 +41,30 @@
 
 
 .itemListContainer{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+
     align-items: center;
-    align-content: center;
-    justify-content: center;
-    align-self: center;
+    align-content: space-evenly;
+    justify-content: space-evenly;
+    align-self: spac;
     justify-self: center;
 }
 
 
 .button{
-    background-color: aliceblue;
-    border: 0;
-    color: black;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 0 5px rgb(150, 149, 149);
+    border-color: rgba(240, 248, 255, 0);
+    padding: 5px 15px 5px 15px;
+    color: rgb(5, 5, 5);
+    background-color: rgb(255, 233, 197);
+}
+
+.button-detail{
+    margin-top: 1rem;
 }
 
 
@@ -92,11 +113,49 @@
 margin: 1rem;
 }
 
-.categories{
-    display: inline;
+.ItemCategoriesContainer{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+
+    align-items: center;
+    align-content: center; 
+    justify-content: center ; 
+    align-self: spac;
+    justify-self: center;
+}
+
+
+.divSeguirComprando{
+    display: flex;
+    height: 100vh;
+    width: 100%;
     align-items: center;
     justify-content: center;
-    height:100vh;
+    
+}
 
+.seguirComprando{
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center ;
+    flex-direction: column;
+    margin: 2rem;
+    background-color: antiquewhite;
+    padding: 10vh;
+    width: 30%;
+    border-radius: 2rem;
 
+}
+
+.seguirComprando:hover{
+    box-shadow: 0 0 5px rgb(150, 149, 149);
+    color: black;
+    transition: 0.3s;
+}
+
+.pBrief{
+    font-size: 1.3rem;
 }

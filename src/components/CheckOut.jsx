@@ -1,24 +1,19 @@
-import { addDoc, collection, getFirestore } from "firebase/firestore";
+import { getFirestore } from "firebase/firestore";
 import { useState } from "react";
-import { useEffect } from "react";
-import { Button, Form } from "react-bootstrap";
-import { useForm } from "react-hook-form";
+import {  Form } from "react-bootstrap";
 import { CrearOrden } from "../queries/products";
 import Brief from "./brief";
 import "../products.css";
-import { useLocalStorage } from "./LocalStorage";
+import { Link } from "react-router-dom";
 
 const CheckOut = () => {
   let productos = [];
   let productoParseado;
-  let total = [];
+  let total = [""];
   let totalCompra;
   const [nombre,setNombre] = useState(" ")
   const [mail,setMail] = useState(" ")
   const [telefono,setTelefono] = useState(" ")
-
-
-
 
 
   for (let i = 0, len = localStorage.length; i < len; ++i) {
@@ -29,8 +24,8 @@ const CheckOut = () => {
 
 
   totalCompra = (a, b) => a + b;
-  totalCompra = total.reduce(totalCompra);
 
+  totalCompra = total.reduce(totalCompra);
 
 
   const datosComprador = () => {
@@ -52,23 +47,36 @@ const CheckOut = () => {
         <p>${item.precio}</p>
         <p>X{item.cantidad}</p>
 
-        <Button
+        <button className="button"
           onClick={() => {
             localStorage.removeItem(item.id);
             window.location.reload(true);
           }}
         >
           X
-        </Button>
+        </button>
       </div>
     ));
   };
 
-  return (
-    <div className="checkOutConForm">
+    
+       if (!productoParseado) {
+
+        return(
+          <div className="divSeguirComprando">
+          <Link className="seguirComprando" to="/">
+                  <h2 className="h2SeguirComprando">Seguir comprando </h2>
+      </Link>
+      </div>
+        )
+        
+      }else{
+        
+     return(
+     
+     <div className="checkOutConForm">
       {renderProductos()}
       <p>total ${totalCompra}</p>
-
       <Form className="formCheckOut"  >
         <Form.Group className="mb-3" controlId="nombre" onChange={event => setNombre(event.target.value)}>
           <Form.Label>Nombre</Form.Label>
@@ -95,17 +103,21 @@ const CheckOut = () => {
             placeholder="+54 9 294-4857234"
           />
         </Form.Group>
-        <Button
-          className="buttonCheckOut"
+        <Link to={'/brief'}>
+        <button
+          className="button"
           onClick={() => {
             datosComprador()
+            localStorage.clear();
           }}
         >
           Finalizar compra
-        </Button>
+        </button>
+        </Link>
       </Form>
     </div>
-  );
+    )
+     }
 };
 
 export default CheckOut;

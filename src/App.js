@@ -4,9 +4,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Product from "./components/ItemDetailContainer";
 import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
-import RenderCategorias from "./components/Categories";
 import CheckOut from "./components/CheckOut";
 import "./products.css"
+import Brief from "./components/brief";
+import ItemCategoriesContainer from "./components/itemCategoriesContainer";
 
 
 function App() {
@@ -23,8 +24,9 @@ function App() {
           <Route exact path="/" element={<ItemListContainer/>}/>
           <Route path="categoria/ItemDetailContainer" element={<Product/>}/>
           <Route path="/product/:id" element={<ItemDetailContainer/>}/>
-          <Route path="/category/:name" element={<RenderCategorias/>}/>
+          <Route path="/category/:name" element={<ItemCategoriesContainer/>}/>
           <Route path="/checkOut" element={<CheckOut/>}/>
+          <Route path="/Brief" element={<Brief/>}/>
         </Routes>
       </BrowserRouter>  
     </div>
